@@ -37,3 +37,23 @@ class Peta:
         if kota1 in self.cityList and kota2 in self.cityList:
             # Hapus kota1 di list kota2
             self.cityList[kota2].remove(kota1)
+            # Hapus kota2 di list kota1
+            self.cityList[kota1].remove(kota2)
+            return True
+        return False
+
+petaIndonesia = Peta()
+petaIndonesia.tambahkanKota("Likupang")
+petaIndonesia.tambahkanKota("Manado")
+petaIndonesia.tambahkanKota("Tomohon")
+petaIndonesia.tambahkanKota("Langoan")
+petaIndonesia.tambahkanKota("Ongkaw")
+petaIndonesia.tambahkanKota("Lolak")
+petaIndonesia.tambahkanKota("Sangkup")
+petaIndonesia.tambahkanKota("Bintauna")
+petaIndonesia.tambahkanKota("Boroko")
+petaIndonesia.tambahkanKota("Kotamobagu")
+petaIndonesia.tambahkanKota("Nuangan")
+petaIndonesia.tambahkanKota("Tondano")
+petaIndonesia.tambahkanKota("Bitung")
+petaIndonesia.tambahkanJalan("Likupang", "Manado")
