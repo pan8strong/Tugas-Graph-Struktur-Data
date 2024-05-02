@@ -17,3 +17,23 @@ class Peta:
             # Hapus kotaDihapus dari setiap kota lain
             for kotalain in self.cityList:
                 # Cek apakah kota yang ingin dihapus ada jalannya ke kota lain
+                if kotaDihapus in self.cityList[kotalain]:
+                    self.cityList[kotalain].remove(kotaDihapus)
+            # Hapus kotaDihapus dari daftar kota
+            del self.cityList[kotaDihapus]
+            return True
+        return False
+    
+    def tambahkanJalan(self, kota1, kota2):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            # Masukkan kota1 di list kota2
+            self.cityList[kota2].append(kota1)
+            # Masukkan kota2 di list kota1
+            self.cityList[kota1].append(kota2)
+            return True
+        return False
+    
+    def hapusJalan(self, kota1, kota2):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            # Hapus kota1 di list kota2
+            self.cityList[kota2].remove(kota1)
