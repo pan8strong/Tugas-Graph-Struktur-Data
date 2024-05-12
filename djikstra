@@ -113,3 +113,40 @@ def tambahkanJalan(self, kota1, kota2, jarak):
 
         return shortest_path, shortest_distance
 
+petaIndonesia = WeightedGraph()
+petaIndonesia.tambahkanKota("Likupang")
+petaIndonesia.tambahkanKota("Manado")
+petaIndonesia.tambahkanKota("Tomohon")
+petaIndonesia.tambahkanKota("Langoan")
+petaIndonesia.tambahkanKota("Ongkaw")
+petaIndonesia.tambahkanKota("Lolak")
+petaIndonesia.tambahkanKota("Sangkup")
+petaIndonesia.tambahkanKota("Bintauna")
+petaIndonesia.tambahkanKota("Boroko")
+petaIndonesia.tambahkanKota("Kotamobagu")
+petaIndonesia.tambahkanKota("Nuangan")
+petaIndonesia.tambahkanKota("Tondano")
+petaIndonesia.tambahkanKota("Bitung")
+
+petaIndonesia.tambahkanJalan("Langoan", "Manado",55)
+petaIndonesia.tambahkanJalan("Langoan", "Likupang",83)
+petaIndonesia.tambahkanJalan("Langoan", "Tomohon",30)
+petaIndonesia.tambahkanJalan("Langoan", "Ongkaw",85)
+petaIndonesia.tambahkanJalan("Langoan", "Lolak",144)
+petaIndonesia.tambahkanJalan("Langoan", "Sangkup",210)
+petaIndonesia.tambahkanJalan("Langoan", "Bintauna",225)
+petaIndonesia.tambahkanJalan("Langoan", "Boroko",265)
+petaIndonesia.tambahkanJalan("Langoan", "Kotamobagu",118)
+petaIndonesia.tambahkanJalan("Langoan", "Nuangan",96)
+petaIndonesia.tambahkanJalan("Langoan", "Tondano",24)
+petaIndonesia.tambahkanJalan("Langoan", "Bitung",75)
+
+
+petaIndonesia.printGraph()
+shortest_distances = petaIndonesia.dijkstra("Langoan")
+print("Jarak terdekat dari Kota Langoan:")
+for city, distance in shortest_distances.items():
+    print(city, ":", distance)
+shortest_path, shortest_distance = petaIndonesia.tsp()
+print("Shortest TSP path:", shortest_path)
+print("Shortest TSP distance:", shortest_distance)
